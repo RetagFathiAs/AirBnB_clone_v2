@@ -7,15 +7,13 @@ from models.city import City
 from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
-from os import environ
+from os import getenv
 
-# use env to store environ var and devide storage method
-env = environ["HBNB_TYPE_STORAGE"]
-if env == 'db':
+
+if getenv("HBNB_TYPE_STORAGE") == "db":
     from models.engine.db_storage import DBStorage
     storage = DBStorage()
-    storage.reload()
-
 else:
+    from models.engine.file_storage import FileStorage
     storage = FileStorage()
-    storage.reload()
+storage.reload()
