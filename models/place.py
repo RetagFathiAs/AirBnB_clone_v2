@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Place class"""
+""" Place Module for HBNB project """
 import models
 from os import getenv
 from models.base_model import Base
@@ -25,7 +25,7 @@ association_table = Table("place_amenity", Base.metadata,
 
 
 class Place(BaseModel, Base):
-    """class Place"""
+    """ A place to stay """
     __tablename__ = "places"
     city_id = Column(String(60), ForeignKey("cities.id"), nullable=False)
     user_id = Column(String(60), ForeignKey("users.id"), nullable=False)
