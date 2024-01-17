@@ -17,7 +17,7 @@ from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
-    """ Contains the functionality for the HBNB console"""
+    """Contains the functionality for the HBNB console"""
 
     # determines prompt for interactive/non-interactive modes
     prompt = '(hbnb) ' if sys.__stdin__.isatty() else ''
@@ -329,9 +329,7 @@ if __name__ == "__main__":
     HBNBCommand().cmdloop()
 =======
 #!/usr/bin/python
-"""
-Module for console
-"""
+"""Module for console"""
 import cmd
 import re
 import shlex
@@ -647,4 +645,7 @@ class HBNBCommand(cmd.Cmd):
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
+<<<<<<< HEAD
 >>>>>>> ed360148f2fcbdb680276621474a4c1b4d009cfc
+=======
+>>>>>>> 75899db89f6e3f5da16aff976271d677b9c232c2
