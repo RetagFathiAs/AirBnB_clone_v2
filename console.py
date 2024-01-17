@@ -76,8 +76,8 @@ class HBNBCommand(cmd.Cmd):
         Quit command to exit the program.
         """
         return True
-    def do_create(self, arg):
-        
+    
+    def do_create(self, arg): 
         """
         Create a new instance of BaseModel and save it to the JSON file.
         Usage: create <class_name>
@@ -179,7 +179,7 @@ class HBNBCommand(cmd.Cmd):
             for key, value in objects.items():
                 if key.split('.')[0] == commands[0]:
                     print(str(value))
-                    
+
     def do_count(self, arg):
         """
         Counts and retrieves the number of instances of a class
