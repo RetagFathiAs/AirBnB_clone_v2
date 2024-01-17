@@ -77,6 +77,12 @@ class FileStorage:
         try:
             del FileStorage.__objects[obj_to_del]
         except AttributeError:
+<<<<<<< HEAD
             pass
         except KeyboardInterrupt:
             pass
+=======
+            pass
+        except KeyboardInterrupt:
+            pass
+>>>>>>> 55b7042d428bb15db1154f856a5724024c9d5feb
