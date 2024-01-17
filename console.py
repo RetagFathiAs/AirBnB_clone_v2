@@ -117,30 +117,45 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, arg):
-        """do create"""
-        argl = parse(arg)
-        if len(argl) == 0:
-            print("** class name missing **")
-        elif argl[0] not in HBNBCommand.__classes:
-            print("** class doesn't exist **")
-        else:
-            class_name = argl[0]
-            params = {}
-            for param in argl[1:]:
-                key, value = param.split('=')
-                if value.startswith('"') and value.endswith('"'):
-                    value = value[1:-1].replace('_', ' ').replace('\\"', '"')
-                elif '.' in value:
-                    value = float(value)
+        """
+        Create a new instance of BaseModel and save it to the JSON file.
+        Usage: create <class_name>
+        """
+        try:
+            class_name = arg.split(" ")[0]
+            if len(class_name) == 0:
+                print("** class name missing **")
+                return
+            if class_name and class_name not in self.valid_classes:
+                print("** class doesn't exist **")
+                return
+
+            kwargs = {}
+            commands = arg.split(" ")
+            for i in range(1, len(commands)):
+                
+                key = commands[i].split("=")[0]
+                value = commands[i].split("=")[1]
+                #key, value = tuple(commands[i].split("="))
+                if value.startswith('"'):
+                    value = value.strip('"').replace("_", " ")
                 else:
                     try:
-                        value = int(value)
-                    except ValueError:
+                        value = eval(value)
+                    except (SyntaxError, NameError):
                         continue
-                params[key] = value
-            obj = eval(class_name)(**params)
-            obj.save()
-            print(obj.id)
+                kwargs[key] = value
+
+            if kwargs == {}:
+                new_instance = eval(class_name)()
+            else:
+                new_instance = eval(class_name)(**kwargs)
+            storage.new(new_instance)
+            print(new_instance.id)
+            storage.save()
+        except ValueError:
+            print(ValueError)
+            return
 
     def help_create(self):
         """ Help information for the create method """
