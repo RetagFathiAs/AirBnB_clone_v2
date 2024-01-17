@@ -1,7 +1,5 @@
 #!/usr/bin/python
-"""
-Module for console
-"""
+"""Module for console"""
 import cmd
 import re
 import shlex
