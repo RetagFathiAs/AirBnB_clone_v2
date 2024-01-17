@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #!/usr/bin/python3
 """ Console Module """
 import cmd
@@ -327,7 +326,6 @@ class HBNBCommand(cmd.Cmd):
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
-=======
 #!/usr/bin/python
 """Module for console"""
 import cmd
@@ -645,7 +643,3 @@ class HBNBCommand(cmd.Cmd):
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
-<<<<<<< HEAD
->>>>>>> ed360148f2fcbdb680276621474a4c1b4d009cfc
-=======
->>>>>>> 75899db89f6e3f5da16aff976271d677b9c232c2
