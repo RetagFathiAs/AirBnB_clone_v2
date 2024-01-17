@@ -2,21 +2,18 @@
 """This module defines a class to manage file storage for hbnb clone"""
 import json
 from models.base_model import BaseModel
-<<<<<<< HEAD
 from models.amenity import Amenity
 from models.city import City
 from models.place import Place
 from models.review import Review
 from models.state import State
 from models.user import User
-=======
 from models.user import User
 from models.place import Place
 from models.state import State
 from models.city import City
 from models.amenity import Amenity
 from models.review import Review
->>>>>>> 75899db89f6e3f5da16aff976271d677b9c232c2
 
 
 class FileStorage:
@@ -25,7 +22,6 @@ class FileStorage:
     __objects = {}
 
     def all(self, cls=None):
-<<<<<<< HEAD
         """Returns a dictionary of models currently in storage"""
         if cls is not None:
             if type(cls) == str:
@@ -36,7 +32,6 @@ class FileStorage:
                     cls_dict[k] = v
             return cls_dict
         return self.__objects
-=======
         """Returns a dictionary of models currently in storage.
 
         Args:
@@ -54,7 +49,6 @@ class FileStorage:
                             v in self.__objects.items() if isinstance(v, cls)}
                 return cls_dict
         return FileStorage.__objects
->>>>>>> 75899db89f6e3f5da16aff976271d677b9c232c2
 
     def new(self, obj):
         """Adds new object to storage dictionary"""
@@ -62,7 +56,6 @@ class FileStorage:
 
     def save(self):
         """Saves storage dictionary to file"""
-<<<<<<< HEAD
         odict = {o: self.__objects[o].to_dict() for o in self.__objects.keys()}
         with open(self.__file_path, "w", encoding="utf-8") as f:
             json.dump(odict, f)
@@ -70,7 +63,6 @@ class FileStorage:
     def reload(self):
         """Loads storage dictionary from file"""
 
-=======
         with open(FileStorage.__file_path, 'w') as f:
             temp = {}
             temp.update(FileStorage.__objects)
@@ -80,14 +72,12 @@ class FileStorage:
 
     def reload(self):
         """Loads storage dictionary from file."""
->>>>>>> 75899db89f6e3f5da16aff976271d677b9c232c2
         classes = {
                     'BaseModel': BaseModel, 'User': User, 'Place': Place,
                     'State': State, 'City': City, 'Amenity': Amenity,
                     'Review': Review
                   }
         try:
-<<<<<<< HEAD
             with open(self.__file_path, "r", encoding="utf-8") as f:
                 for o in json.load(f).values():
                     name = o["__class__"]
@@ -106,7 +96,6 @@ class FileStorage:
     def close(self):
         """Call the reload method."""
         self.reload()
-=======
             temp = {}
             with open(FileStorage.__file_path, 'r') as f:
                 temp = json.load(f)
@@ -132,4 +121,3 @@ class FileStorage:
             pass
         except KeyboardInterrupt:
             pass
->>>>>>> 75899db89f6e3f5da16aff976271d677b9c232c2
