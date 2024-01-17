@@ -77,6 +77,7 @@ class HBNBCommand(cmd.Cmd):
         """
         return True
     def do_create(self, arg):
+        
         """
         Create a new instance of BaseModel and save it to the JSON file.
         Usage: create <class_name>
@@ -178,7 +179,7 @@ class HBNBCommand(cmd.Cmd):
             for key, value in objects.items():
                 if key.split('.')[0] == commands[0]:
                     print(str(value))
-        
+                    
     def do_count(self, arg):
         """
         Counts and retrieves the number of instances of a class
@@ -267,7 +268,7 @@ class HBNBCommand(cmd.Cmd):
                     setattr(obj, attr_name, attr_value)
 
                 obj.save()
-    
+                
     def default(self, arg):
         """
         Default behavior for cmd module when input is invalid
@@ -309,7 +310,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("*** Unknown syntax: {}".format(arg))
             return False
-    
+            
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
