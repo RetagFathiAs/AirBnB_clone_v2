@@ -48,6 +48,8 @@ This repository contains the initial stage of a student project to build a clone
     * update - Updates existing attributes an object based on class name and UUID
 
     * quit - Exits the program (EOF will as well)
+    
+    * alo we add a bunch of features ^-^
 
 
 ##### Alternative Syntax
@@ -82,6 +84,7 @@ Usage: create <class_name>
 (hbnb)                   
 ```
 ###### Example 1: Show an object
+------
 Usage: show <class_name> <_id>
 
 ```
