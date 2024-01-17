@@ -182,7 +182,7 @@ class HBNBCommand(cmd.Cmd):
             for key, value in objects.items():
                 if key.split('.')[0] == commands[0]:
                     print(str(value))
-    
+
     def do_count(self, arg):
         """
         Counts and retrieves the number of instances of a class
@@ -271,7 +271,7 @@ class HBNBCommand(cmd.Cmd):
                     setattr(obj, attr_name, attr_value)
 
                 obj.save()
-    
+
     def default(self, arg):
         """
         Default behavior for cmd module when input is invalid
