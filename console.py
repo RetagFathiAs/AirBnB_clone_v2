@@ -15,8 +15,6 @@ from models.review import Review
 from models.state import State
 from models.city import City
 
-
-
 def split_curly_braces(e_arg):
     """
     Splits the curly braces for the update method
@@ -55,6 +53,7 @@ class HBNBCommand(cmd.Cmd):
     """
     HBNBCommand console class
     """
+    
     prompt = "(hbnb) "
     valid_classes = ["BaseModel", "User", "Amenity",
                      "Place", "Review", "State", "City"]
