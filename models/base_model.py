@@ -20,7 +20,7 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         """Instatntiates a new model"""
-                self.id = str(uuid4())
+        self.id = str(uuid4())
         self.created_at = self.updated_at = datetime.utcnow()
         if kwargs:
             for key, value in kwargs.items():
