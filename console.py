@@ -16,7 +16,6 @@ from models.state import State
 from models.city import City
 
 
-
 def split_curly_braces(e_arg):
     """
     Splits the curly braces for the update method
@@ -51,6 +50,7 @@ def split_curly_braces(e_arg):
                 return id, attr_name
             return f"{id}", f"{attr_name} {attr_value}"
 
+
 class HBNBCommand(cmd.Cmd):
     """
     HBNBCommand console class
@@ -77,7 +77,6 @@ class HBNBCommand(cmd.Cmd):
         """
         return True
         
-
     def do_create(self, arg):
         """
         Create a new instance of BaseModel and save it to the JSON file.
@@ -95,10 +94,8 @@ class HBNBCommand(cmd.Cmd):
             kwargs = {}
             commands = arg.split(" ")
             for i in range(1, len(commands)):
-                
                 key = commands[i].split("=")[0]
                 value = commands[i].split("=")[1]
-                #key, value = tuple(commands[i].split("="))
                 if value.startswith('"'):
                     value = value.strip('"').replace("_", " ")
                 else:
