@@ -76,7 +76,6 @@ class HBNBCommand(cmd.Cmd):
         Quit command to exit the program.
         """
         return True
-        
     def do_create(self, arg):
         """
         Create a new instance of BaseModel and save it to the JSON file.
